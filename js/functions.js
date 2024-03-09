@@ -1,15 +1,15 @@
-function comparesLength (string = '', maxSymbols = 1) => {
-  return (string.length) <= maxSymbols);
-  };
+function checkLength (string, maxLength) {
+  const result = (string.length <= maxLength) ? true : false;
+  return result;
+}
 
-
-  /***********************************************************/
-  const getPalidrome = (string = '') => {
-
-    string = string.replaceAll (' ', '').lowerCase();
-    let reversedLine = '';
-    for (i = string.length - 1, i >= 0, i --){
-      reversedLine += string[i];
-    }
-    return string === reversedLine;
+function checkIfPalindrom (string) {
+  const noSpaceString = string.replaceAll(' ','');
+  const normalisedString = noSpaceString.toUpperCase();
+  let reversedString = '';
+  for (let i = normalisedString.length - 1; i >= 0; i--) {
+    reversedString += normalisedString[i];
   }
+  const isPalindrom = (reversedString === normalisedString);
+  return isPalindrom;
+}
